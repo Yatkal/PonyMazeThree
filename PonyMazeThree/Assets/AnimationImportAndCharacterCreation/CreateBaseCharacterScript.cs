@@ -46,6 +46,9 @@ public class CreateBaseCharacterScript : MonoBehaviour {
         string materialsNameER = "Models/Materials/ER_";
         string materialsNameHA = "Models/Materials/HA_";
         string materialsNameTA = "Models/Materials/TA_";
+        string materialsNameHAF = "Models/Materials/HAF_";
+        string materialsNameHAB = "Models/Materials/HAB_";
+        string materialsNameHO = "Models/Materials/HO_";
 
         materialsNameB += characterName;
         materialsNameP += characterName;
@@ -55,6 +58,9 @@ public class CreateBaseCharacterScript : MonoBehaviour {
         materialsNameER += characterName;
         materialsNameHA += characterName;
         materialsNameTA += characterName;
+        materialsNameHAF += characterName;
+        materialsNameHO += characterName;
+        materialsNameHAB += characterName;
 
         materials = character.transform.Find("Reference").GetComponent<Renderer>().materials;
 
@@ -80,11 +86,21 @@ public class CreateBaseCharacterScript : MonoBehaviour {
         Material[] headMaterials;
         Material[] hairMaterial;
         Material[] tailMaterial;
+        Material[] hornMaterial;
         headMaterials = head.transform.Find("Reference").GetComponent<Renderer>().materials;
         hairMaterial = head.transform.Find("Hair").GetComponent<Renderer>().materials;
         tailMaterial = head.transform.Find("Tail").GetComponent<Renderer>().materials;
 
-        for(int iter = 0; headMaterials.Length > iter; iter++)
+        if (head.transform.Find("Horn"))
+        {
+            hornMaterial = head.transform.Find("Horn").GetComponent<Renderer>().materials;
+        }
+        else
+        {
+            hornMaterial = null;
+        }
+
+        for (int iter = 0; headMaterials.Length > iter; iter++)
         {
             if (headMaterials[iter].name == "body (Instance)")
             {
@@ -128,6 +144,16 @@ public class CreateBaseCharacterScript : MonoBehaviour {
                 hairMaterial[iter].mainTexture = (Texture)Resources.Load(materialsNameHA);
                 hairMaterial[iter].color = Color.white;
             }
+            else if (hairMaterial[iter].name == "hairfront (Instance)")
+            {
+                hairMaterial[iter].mainTexture = (Texture)Resources.Load(materialsNameHAF);
+                hairMaterial[iter].color = Color.white;
+            }
+            else if (hairMaterial[iter].name == "hairback (Instance)")
+            {
+                hairMaterial[iter].mainTexture = (Texture)Resources.Load(materialsNameHAB);
+                hairMaterial[iter].color = Color.white;
+            }
         }
         for (int iter = 0; tailMaterial.Length > iter; iter++)
         {
@@ -135,6 +161,18 @@ public class CreateBaseCharacterScript : MonoBehaviour {
             {
                 tailMaterial[iter].mainTexture = (Texture)Resources.Load(materialsNameTA);
                 tailMaterial[iter].color = Color.white;
+            }
+        }
+
+        if (hornMaterial != null)
+        {
+            for (int iter = 0; hornMaterial.Length > iter; iter++)
+            {
+                if (hornMaterial[iter].name == "horn (Instance)")
+                {
+                    hornMaterial[iter].mainTexture = (Texture)Resources.Load(materialsNameHO);
+                    hornMaterial[iter].color = Color.white;
+                }
             }
         }
     }
