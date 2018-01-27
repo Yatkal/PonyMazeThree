@@ -8,7 +8,7 @@ public class ModelLoaderScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         character = GameObject.FindGameObjectWithTag("Player");
-        character.GetComponent<CreateBaseCharacterScript>().CreateCharacter("Octavia");
+        character.GetComponent<CreateBaseCharacterScript>().CreateCharacter("Rarity");
 	}
 	
 	// Update is called once per frame

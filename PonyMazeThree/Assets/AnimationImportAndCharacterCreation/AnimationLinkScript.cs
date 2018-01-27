@@ -24,8 +24,8 @@ public class AnimationLinkScript : MonoBehaviour {
         finishedModel = new GameObject("Model");
         bodyAnimation = GameObject.Find("UnparentedBodyWalk").transform.GetChild(0).gameObject;
         headAnimation = GameObject.Find("UnparentedHeadWalk").transform.GetChild(0).gameObject;
-        bodyModel = transform.FindChild("SoriaModel(Clone)").gameObject;
-        headModel = transform.FindChild("Octavia(Clone)").gameObject;
+        bodyModel = transform.Find("SoriaModel(Clone)").gameObject;
+        headModel = transform.Find("Octavia(Clone)").gameObject;
 
         GetChildRecursiveForBodyModel(bodyModel);
         GetChildRecursiveForHeadModel(headModel);

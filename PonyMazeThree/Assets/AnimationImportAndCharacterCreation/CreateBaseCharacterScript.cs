@@ -56,7 +56,7 @@ public class CreateBaseCharacterScript : MonoBehaviour {
         materialsNameHA += characterName;
         materialsNameTA += characterName;
 
-        materials = character.transform.FindChild("Reference").GetComponent<Renderer>().materials;
+        materials = character.transform.Find("Reference").GetComponent<Renderer>().materials;
 
         for(int iter = 0; materials.Length > iter; iter++)
         {
@@ -80,9 +80,9 @@ public class CreateBaseCharacterScript : MonoBehaviour {
         Material[] headMaterials;
         Material[] hairMaterial;
         Material[] tailMaterial;
-        headMaterials = head.transform.FindChild("Reference").GetComponent<Renderer>().materials;
-        hairMaterial = head.transform.FindChild("Hair").GetComponent<Renderer>().materials;
-        tailMaterial = head.transform.FindChild("Tail").GetComponent<Renderer>().materials;
+        headMaterials = head.transform.Find("Reference").GetComponent<Renderer>().materials;
+        hairMaterial = head.transform.Find("Hair").GetComponent<Renderer>().materials;
+        tailMaterial = head.transform.Find("Tail").GetComponent<Renderer>().materials;
 
         for(int iter = 0; headMaterials.Length > iter; iter++)
         {
