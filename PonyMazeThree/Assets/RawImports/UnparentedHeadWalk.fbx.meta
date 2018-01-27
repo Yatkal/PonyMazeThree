@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 2c2ea63df1c72e54e8ad93d82e75de27
+timeCreated: 1512314379
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Chest1
+    100004: Chest2
+    100006: Cube
+    100008: HairBack1
+    100010: Head
+    100012: Head 1
+    100014: jiggle_bowtiel
+    100016: jiggle_bowtiel_end
+    100018: jiggle_bowtier
+    100020: jiggle_bowtier_end
+    100022: jiggle_hair1
+    100024: jiggle_hair1_end
+    100026: jiggle_hair2
+    100028: jiggle_hair2_end
+    100030: Lamp
+    100032: LeftBall
+    100034: LeftBall_end
+    100036: LeftEar
+    100038: LeftEar_end
+    100040: LeftFoot
+    100042: LeftFoot_end
+    100044: LeftForearm
+    100046: LeftHand
+    100048: LeftLeg1
+    100050: LeftLeg2
+    100052: LeftShoulder
+    100054: LeftThigh
+    100056: Neck
+    100058: Pelvis
+    100060: RightBall
+    100062: RightBall_end
+    100064: RightEar
+    100066: RightEar_end
+    100068: RightFoot
+    100070: RightFoot_end
+    100072: RightForearm
+    100074: RightHand
+    100076: RightLeg1
+    100078: RightLeg2
+    100080: RightShoulder
+    100082: RightThigh
+    100084: Tail1
+    100086: Tail2
+    100088: Tail3
+    100090: Tail3_end
+    100092: //RootNode
+    100094: viewTarget
+    100096: viewTarget_end
+    400000: Camera
+    400002: Chest1
+    400004: Chest2
+    400006: Cube
+    400008: HairBack1
+    400010: Head
+    400012: Head 1
+    400014: jiggle_bowtiel
+    400016: jiggle_bowtiel_end
+    400018: jiggle_bowtier
+    400020: jiggle_bowtier_end
+    400022: jiggle_hair1
+    400024: jiggle_hair1_end
+    400026: jiggle_hair2
+    400028: jiggle_hair2_end
+    400030: Lamp
+    400032: LeftBall
+    400034: LeftBall_end
+    400036: LeftEar
+    400038: LeftEar_end
+    400040: LeftFoot
+    400042: LeftFoot_end
+    400044: LeftForearm
+    400046: LeftHand
+    400048: LeftLeg1
+    400050: LeftLeg2
+    400052: LeftShoulder
+    400054: LeftThigh
+    400056: Neck
+    400058: Pelvis
+    400060: RightBall
+    400062: RightBall_end
+    400064: RightEar
+    400066: RightEar_end
+    400068: RightFoot
+    400070: RightFoot_end
+    400072: RightForearm
+    400074: RightHand
+    400076: RightLeg1
+    400078: RightLeg2
+    400080: RightShoulder
+    400082: RightThigh
+    400084: Tail1
+    400086: Tail2
+    400088: Tail3
+    400090: Tail3_end
+    400092: //RootNode
+    400094: viewTarget
+    400096: viewTarget_end
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
+    7400000: Head|headwalk
+    7400002: Head|headwalk.001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Head
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
