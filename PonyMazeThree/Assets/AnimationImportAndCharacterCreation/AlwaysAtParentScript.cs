@@ -8,14 +8,22 @@ public class AlwaysAtParentScript : MonoBehaviour {
     Vector3 scale;
     Vector3 pos;
     Quaternion rot;
+    string animationName;
+
+    public void Create(string name)
+    {
+       animationName = name;
+        Setup();
+    }
+
     // Use this for initialization
-    void Start () {
+    void Setup () {
         parent = transform.parent.gameObject;
         thisobject = gameObject;
         pos = Vector3.zero;
         rot = Quaternion.identity;
-
-        if (transform.root.name == "UnparentedHeadWalk")
+        
+        if (animationName == "Head")
         {
             //if (transform.parent.name == "Chest2")
             //{
@@ -35,29 +43,29 @@ public class AlwaysAtParentScript : MonoBehaviour {
             else if (transform.parent.name == "jiggle_hair2")
             {
                 scale = new Vector3(5f, 5f, 5f);
-                pos = new Vector3(0.008f, -0.06f, 0.374f);
+                //pos = new Vector3(0.008f, -0.06f, 0.374f);
             }
             else if (transform.parent.name == "LeftEar")
             {
                 scale = new Vector3(5f, 5f, 5f);
-                pos = new Vector3(0.189f, 0.624f, -0.271f);
+               // pos = new Vector3(0.189f, 0.624f, -0.271f);
             }
             else if (transform.parent.name == "RightEar")
             {
                 scale = new Vector3(5f, 5f, 5f);
-                pos = new Vector3(0.268f, 0.615f, 0.262f);
+                //pos = new Vector3(0.268f, 0.615f, 0.262f);
             }
             else if (transform.parent.name == "jiggle_hair1")
             {
                 scale = new Vector3(4f, 4f, 4f);
-                pos = new Vector3(1.0f, 0.0f, 0.0f);
+                //pos = new Vector3(1.0f, 0.0f, 0.0f);
             }
             else
             {
                 scale = new Vector3(0f, 0f, 0f);
             }
         }
-        else if (transform.root.name == "UnparentedBodyWalk")
+        if (animationName == "Body")
         {
             if (transform.parent.name == "ValveBiped.Bip01_neck1" || transform.parent.name == "ValveBiped.Bip01_Head1" || transform.parent.name == "L-Ear-1"
                 || transform.parent.name == "L-Ear-2" || transform.parent.name == "R-Ear-1" || transform.parent.name == "R-Ear-2" || transform.parent.name == "L-Hair-1-1"

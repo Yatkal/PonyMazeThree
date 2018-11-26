@@ -51,103 +51,37 @@ public class ApplicationManagerScript : MonoBehaviour {
             //find out what we need to load and start the load process
             if (currentApplicationState == "APPLICATIONSTART")
             {
-                if (SceneManager.GetSceneByName("MainMenuScene").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-
-                    SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Additive);
-                    Debug.Log("LoadMenuScene");
-                    currentLevelScene = "MainMenuScene";
-                    AudioManagerScript.instance.CreateNewBackgroundMusic("MenuMusic");
-                    previousApplicationState = currentApplicationState;
-                }
+                LoadScene("MainMenuScene");
             }
             else if (currentApplicationState == "MAINMENU")
             {
-                if (SceneManager.GetSceneByName("MainMenuScene").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-                    SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Additive);
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenuScene"));
-                    Debug.Log("LoadMenuScene");
-                    currentLevelScene = "MainMenuScene";
-                    if (AudioManagerScript.instance.currentBackgroundMusic.GetComponent<AudioSource>().clip.name != "MenuMusic")
-                    {
-                        AudioManagerScript.instance.CreateNewBackgroundMusic("MenuMusic");
-                    }
-                    previousApplicationState = currentApplicationState;
-                }
+                LoadScene("MainMenuScene");
             }
             else if (currentApplicationState == "CHARSELECT")
             {
-                if (SceneManager.GetSceneByName("CharacterCreationScene").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-                    SceneManager.LoadScene("CharacterCreationScene", LoadSceneMode.Additive);
-                    Debug.Log("LoadCharacterSelectionScene");
-                    currentLevelScene = "CharacterCreationScene";
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
-                }
-                previousApplicationState = currentApplicationState;
+                LoadScene("CharacterCreationScene");
 
             }
             else if (currentApplicationState == "LEVEL1PLAY")
             {
-                if (SceneManager.GetSceneByName("Level1").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-                    SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
-                    Debug.Log("LoadLevel1");
-                    currentLevelScene = "Level1";
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
-                }
-                previousApplicationState = currentApplicationState;
+                LoadScene("Level1");
 
             }
             else if (currentApplicationState == "WINSCREEN")
             {
-                if (SceneManager.GetSceneByName("WinScreen").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-                    SceneManager.LoadScene("WinScreen", LoadSceneMode.Additive);
-                    Debug.Log("LoadWinScreen");
-                    currentLevelScene = "WinScreen";
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
-                }
-                previousApplicationState = currentApplicationState;
+                LoadScene("WinScreen");
 
             }
             else if (currentApplicationState == "OPTIONSSCENE")
             {
-                if (SceneManager.GetSceneByName("OptionsScene").isLoaded != true)
-                {
-                    if (currentLevelScene != null)
-                    {
-                        SceneManager.UnloadSceneAsync(currentLevelScene);
-                    }
-                    SceneManager.LoadScene("OptionsScene", LoadSceneMode.Additive);
-                    Debug.Log("OptionsScene");
-                    currentLevelScene = "OptionsScene";
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
-                }
-                previousApplicationState = currentApplicationState;
+                LoadScene("OptionsScene");
 
             }
+            else if (currentApplicationState == "VIEWERSCENE")
+            {
+                LoadScene("ViewerScene");
+            }
+
         }
         else
         {
@@ -156,9 +90,11 @@ public class ApplicationManagerScript : MonoBehaviour {
                 Destroy(GameObject.FindGameObjectWithTag("LoadingScreen"));
             }
             previousApplicationState = currentApplicationState;
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
+            
         }
 
+      //if (SceneManager.)
+       // SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
         
     }
 
@@ -171,4 +107,20 @@ public class ApplicationManagerScript : MonoBehaviour {
     {
         currentApplicationState = toSet;
     }
+
+    private void LoadScene(string sceneName)
+    {
+        if (SceneManager.GetSceneByName(sceneName).isLoaded != true)
+        {
+            if (currentLevelScene != null)
+            {
+                SceneManager.UnloadSceneAsync(currentLevelScene);
+            }
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            Debug.Log(sceneName);
+            currentLevelScene = sceneName;
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelScene));
+        }
+        previousApplicationState = currentApplicationState;
+    } 
 }

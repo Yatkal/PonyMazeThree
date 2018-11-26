@@ -14,14 +14,10 @@ public class CreateBaseCharacterScript : MonoBehaviour {
 
         modelString += characterName;
 
-        GameObject temp = Instantiate((GameObject)Resources.Load("Models/SoriaModel"));
+        GameObject temp = Instantiate((GameObject)Resources.Load(modelString));
         character = temp;
         character.transform.parent = gameObject.transform;
-        GameObject temp2 = Instantiate((GameObject)Resources.Load(modelString));
-        head = temp2;
-        //head.transform.parent.position = new Vector3(-0.1f, -1.4f, -17.03f);
-        head.transform.parent = gameObject.transform;
-        ApplyBaseMaterials(characterName);
+        //ApplyBaseMaterials(characterName);
 
         //gameObject.AddComponent<AnimationLinkScript>();
 

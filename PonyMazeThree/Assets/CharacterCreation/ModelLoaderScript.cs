@@ -11,11 +11,28 @@ public class ModelLoaderScript : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        
+        //if (ApplicationManagerScript.instance.GetCurrentApplicationState() == "CHARSELECT")
+        //{
+            LoadModelIdle();
+        //}
+        //else
+        //{
+        //    LoadModelPlayer();
+        //}
+    }
+
+    private void LoadModelPlayer()
+    {
+
+    }
+
+    public void LoadModelIdle()
+    {
         characterNames = new List<string>();
         character = GameObject.FindGameObjectWithTag("Player");
         PopulateCharacterNameList();
         character.GetComponent<CreateBaseCharacterScript>().CreateCharacter(characterNames[0]);
+        gameObject.GetComponent<AnimationLinkScript>().LinkAnimationToModel("IdleTest", character.name);
 
     }
 
@@ -43,11 +60,13 @@ public class ModelLoaderScript : MonoBehaviour {
         if(currentCharacter < characterNames.Count)
         {
             character.GetComponent<CreateBaseCharacterScript>().RefreshCharacter(characterNames[currentCharacter]);
+            gameObject.GetComponent<AnimationLinkScript>().LinkAnimationToModel("IdleTest", character.name);
         }
         else
         {
             currentCharacter = 0;
             character.GetComponent<CreateBaseCharacterScript>().RefreshCharacter(characterNames[currentCharacter]);
+            gameObject.GetComponent<AnimationLinkScript>().LinkAnimationToModel("IdleTest", character.name);
         }
 
     }
@@ -58,11 +77,13 @@ public class ModelLoaderScript : MonoBehaviour {
         if (currentCharacter >= 0)
         {
             character.GetComponent<CreateBaseCharacterScript>().RefreshCharacter(characterNames[currentCharacter]);
+            gameObject.GetComponent<AnimationLinkScript>().LinkAnimationToModel("IdleTest", character.name);
         }
         else
         {
             currentCharacter = characterNames.Count - 1;
             character.GetComponent<CreateBaseCharacterScript>().RefreshCharacter(characterNames[currentCharacter]);
+            gameObject.GetComponent<AnimationLinkScript>().LinkAnimationToModel("IdleTest", character.name);
         }
     }
 	
